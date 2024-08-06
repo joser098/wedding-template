@@ -1,16 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Cutdown from '../components/Cutdown.astro'
-import Events from '../components/Events.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Countdown from "../components/Countdown.astro";
+import Events from "../components/Events.astro";
 ---
 
 <Layout title="Welcome to Wedding">
-	<main>
-		<ul role="list" class="link-card-grid">
-			<Hero/>
-			<Cutdown/>
-			<Events />
-		</ul>
-	</main>
+  <main>
+    <Hero />
+    <Countdown />
+    <Events />
+  </main>
 </Layout>

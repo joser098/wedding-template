@@ -1,0 +1,177 @@
+---
+const TIMESTAMP = 1727271000000;
+---
+
+<section class="main">
+  <div class="countdown" data-date={TIMESTAMP}>
+    <div class="digits">
+      <span class="num" data-days>00</span>
+      <span>Días</span>
+    </div>
+    <div class="digits">
+      <span class="num" data-hours>00</span>
+      <span>Horas</span>
+    </div>
+    <div class="digits">
+      <span class="num" data-minutes>00</span>
+      <span>Minutos</span>
+    </div>
+    <div class="digits">
+      <span class="num" data-seconds>00</span>
+      <span>Segundos</span>
+    </div>
+  </div>
+  <article>
+    <img class="icon" src="/icono-corazon.svg" alt="icono de corazon" />
+    <p>
+      Queremos celebrar junto a ti este momento tan especial para nosotros...
+    </p>
+  </article>
+</section>
+
+<style>
+  .main,
+  article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0;
+  }
+
+  .countdown {
+    display: flex;
+    gap: 10px;
+  }
+
+  .digits {
+    min-width: 65px;
+    min-height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border: 1px dotted #565656;
+    border-radius: 100%;
+  }
+
+  span {
+    font-family: "Times New Roman", Times, serif;
+    font-size: x-small;
+    color: #565656;
+  }
+
+  .num {
+    font-size: medium;
+  }
+
+  .icon {
+    max-width: 60px;
+  }
+  p {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: small;
+  }
+
+  /* SIZE FOR 640px */
+  @media (min-width: 640px) {
+    .countdown {
+      gap: 30px;
+    }
+
+    span {
+      font-size: medium;
+    }
+
+    .num {
+      font-size: x-large;
+    }
+
+    .digits {
+      min-width: 95px;
+      min-height: 95px;
+      padding: 15px;
+    }
+
+    p {
+        font-size: 23px;
+    }
+  }
+
+  /* SIZE FOR 1024px */
+  @media (min-width: 1024px) {
+    .countdown {
+      gap: 40px;
+    }
+
+    span {
+      font-size: large;
+    }
+
+    .num {
+      font-size: xx-large;
+    }
+
+    .digits {
+      padding: 25px;
+    }
+
+    .icon {
+      max-width: 80px;
+    }
+  }
+</style>
+
+<script>
+  const SECOND = 1000;
+  const MINUTE = SECOND * 60;
+  const HOUR = MINUTE * 60;
+  const DAY = HOUR * 24;
+
+  function init() {
+    const $countdown = document.querySelector("[data-date]");
+    if (!$countdown) return;
+
+    const $days = $countdown.querySelector("[data-days]");
+    const $hours = $countdown.querySelector("[data-hours]");
+    const $minutes = $countdown.querySelector("[data-minutes]");
+    const $seconds = $countdown.querySelector("[data-seconds]");
+
+    const timestamp = $countdown.getAttribute("data-date");
+    if (!timestamp) return;
+
+    const date = new Date(+timestamp).getTime();
+
+    const formatTime = (time: number) => {
+      return Math.floor(time).toString().padStart(2, "0");
+    };
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = date - now;
+
+      if ($days instanceof HTMLElement) {
+        $days.innerText = formatTime(diff / DAY);
+      }
+
+      if ($hours instanceof HTMLElement) {
+        $hours.innerText = formatTime((diff % DAY) / HOUR);
+      }
+
+      if ($minutes instanceof HTMLElement) {
+        $minutes.innerText = formatTime((diff % HOUR) / MINUTE);
+      }
+
+      if ($seconds instanceof HTMLElement) {
+        $seconds.innerText = formatTime((diff % MINUTE) / SECOND);
+      }
+    }
+
+    setInterval(updateCountdown, SECOND);
+  }
+
+  init();
+</script>
