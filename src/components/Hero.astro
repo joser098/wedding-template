@@ -1,1 +1,39 @@
-<h1>Este es mi hero</h1>
+---
+import ChevronDown from "../icons/Chevron-down.astro";
+---
+
+<section class="hero">
+    <img src="/logo-portada.png" alt="">
+    <ChevronDown/>
+</section>
+<style>
+    .hero {
+        background: url("/hero.png");
+        height: 100vh;
+        width: 100vw;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+        background-color: rgba(88, 57, 11, 0.4);
+        background-blend-mode: soft-light;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+
+    img{
+        margin-top: 60px;
+        max-width: 300px;
+    }
+
+    @media (min-width:640px){
+        img{
+            margin-top: 0;
+            max-width: none; 
+        }
+        .hero {
+            align-items: center;
+        }
+    }
+</style>
