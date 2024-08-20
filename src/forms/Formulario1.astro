@@ -1,0 +1,99 @@
+<style>
+  .body {
+    background-color: rgb(248, 238, 244);
+  }
+
+  .datos {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(10, 10, 10);
+  }
+
+  .confirmacion {
+    font-size: 35px;
+    font-weight: 500;
+    color: rgb(10, 10, 10);
+    margin: 10px;
+  }
+
+  .texto2 {
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(10, 10, 10);
+  }
+
+  #block-container {
+    background-color: transparent;
+    width: 600px;
+    padding: 10px 60px 10px 60px;
+    height: 150px;
+    text-align: center;
+    line-height: 30px;
+    border: 2px solid rgb(14, 13, 13);
+    border-radius: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .boton {
+    font-size: 15px;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    background-color: rgb(109, 107, 107);
+    height: 40px;
+    width: 80px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<div id="block-container">
+  <header>
+    <h1 class="confirmacion">CONFIRMACION DE ASISTENCIA</h1>
+  </header>
+  <div>
+    <h2 class="datos">Ingresa tus datos y confirma tu asistencia</h2>
+  </div>
+</div>
+<main>
+  <form>
+    <div id="block-container">
+      <div>
+        <label for="nombre" class="texto2">Nombre y Apellido: </label>
+        <input type="text" name="nombre" />
+      </div>
+    </div>
+
+    <div id="block-container">
+      <div>
+        <label for="asistencia" class="texto2">Asistencia: </label>
+        <input type="text" name="asistencia" />
+      </div>
+    </div>
+
+    <div id="block-container">
+      <div>
+        <label for="nombre y apellido" class="texto2"
+          >Si fuiste invitado con acompañante, indica su nombre y
+          apellido:</label
+        >
+        <input type="text" name="nombre y apellido" />
+      </div>
+    </div>
+
+    <div id="block-container">
+      <div>
+        <label for="mensaje" class="texto2">
+          ¿Queres dejar un mensaje a los novios?:
+        </label>
+        <input type="text" name="mensaje" />
+      </div>
+    </div>
+    <button class="boton">ENVIAR</button>
+  </form>
+</main>
