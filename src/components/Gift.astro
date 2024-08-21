@@ -29,7 +29,7 @@
         margin-top: 25px;
         margin-bottom: 5px;
     }
-    .fact {
+    #btn {
         color: #ffffff;
         border: 2px solid #dcc8b4;
         border-radius: 30px;
@@ -42,7 +42,7 @@
         text-decoration: none;
         display: inline-block;
     }
-    .fact:hover {
+    #btn:hover {
         background-color: transparent;
         color: #dcc8b4;
     }
@@ -55,9 +55,31 @@
             <p>
                 Gracias por su cariño, apoyo y presencia en nuestro gran día.
                 Por favor, no olviden añadir una tarjeta con sus mejores deseos
-                para nuestro matrimonio.    
+                para nuestro matrimonio.
             </p>
-            <a href="" class="fact">VER DATO</a>
+            <button id="btn"> VER DATO </button>
         </div>
     </div>
 </main>
+
+<dialog id="model">
+    <p>
+        Tendremos un buzón en la recepción donde podran depositar su sobre con
+        el regalo en efectivo
+    </p>
+    <button id="cerrar">cerrar</button>
+</dialog>
+
+<script is:inline>
+    const modal = document.querySelector("#model");
+    const btn = document.querySelector("#btn");
+    const btncerrar = document.querySelector("#cerrar");
+
+    btn.addEventListener("click", () => {
+        modal.showModal();
+    });
+
+    btncerrar.addEventListener("click", () =>{
+        modal.close()
+    })
+</script>
