@@ -1,85 +1,122 @@
 <style>
-    main {
-        background: url("/fondo-papel.png");
-        padding: 60px 0;
-    }
-    #container {
-        background-color: #fff;
-        background-position: center center;
-        width: 600px;
-        padding: 25px 2px 50px;
-        height: 200px;
-        text-align: center;
-        line-height: 30px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    p {
-        font-size: 19px;
-        color: #666666;
-        margin: 5px;
-        margin-bottom: 20px;
-        font-family: "Noto Serif Georgian", serif;
-        font-weight: 300;
-    }
-    img {
-        width: 80px;
-        margin-top: 25px;
-        margin-bottom: 5px;
-    }
-    #btn {
-        color: #ffffff;
-        border: 2px solid #dcc8b4;
-        border-radius: 30px;
-        transition: 1s;
-        background-color: #dcc8b4;
-        padding: 5px 40px;
-        font-size: 16px;
-        font-weight: 450;
-        margin: 3px;
-        text-decoration: none;
-        display: inline-block;
-    }
-    #btn:hover {
+  main {
+    background: url("/fondo-papel.png");
+    padding: 40px;
+  }
+  #container {
+    background-color: #fff;
+    background-position: center center;
+    max-width: 600px;
+    width: 100%;
+    padding: 25px 2px 50px;
+    height: auto;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  p {
+    font-size: small;
+    color: #666;
+    margin: 5px;
+    margin-bottom: 20px;
+    font-family: "Noto Serif Georgian", serif;
+    font-weight: 300;
+  }
+  img {
+    width: 80px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+  #btn, .btn {
+    color: #ffffff;
+    border: 2px solid #dcc8b4;
+    border-radius: 30px;
+    transition: 1s;
+    background-color: #dcc8b4;
+    padding: 5px 40px;
+    font-size: small;
+    font-weight: 450;
+    margin: 3px;
+    text-decoration: none;
+    display: inline-block;
+
+    &&:hover {
         background-color: transparent;
         color: #dcc8b4;
     }
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    max-width: 300px;
+    }
+
+    .gift {
+        padding: 0 10px;
+    }
+
+  /* SIZE FOR 640px */
+  @media (min-width: 640px) {
+    p {
+      font-size: large;
+    }
+    .modal {
+        max-width: 500px;
+    }
+  }
 </style>
 
-<main>
-    <div id="container">
-        <div class="gitf">
-            <img src="regalo.svg" />
-            <p>
-                Gracias por su cariño, apoyo y presencia en nuestro gran día.
-                Por favor, no olviden añadir una tarjeta con sus mejores deseos
-                para nuestro matrimonio.
-            </p>
-            <button id="btn"> VER DATO </button>
-        </div>
+<main class="fade-in">
+  <div id="container">
+    <div class="gift">
+      <img src="regalo.svg" />
+      <p>
+        Gracias por su cariño, apoyo y presencia en nuestro gran día. Por favor,
+        no olviden añadir una tarjeta con sus mejores deseos para nuestro
+        matrimonio.
+      </p>
+      <button id="btn"> VER DATO </button>
     </div>
+  </div>
 </main>
 
-<dialog id="model">
-    <p>
-        Tendremos un buzón en la recepción donde podran depositar su sobre con
-        el regalo en efectivo
-    </p>
-    <button id="cerrar">cerrar</button>
+<dialog id="model" class="modal">
+  <p>
+    Tendremos un buzón en la recepción donde podran depositar su sobre con el regalo en efectivo
+  </p>
+  <button id="cerrar" class="btn">cerrar</button>
 </dialog>
 
-<script is:inline>
-    const modal = document.querySelector("#model");
-    const btn = document.querySelector("#btn");
-    const btncerrar = document.querySelector("#cerrar");
+<script>
+  const ele = document.querySelectorAll(".fade-in");
+  const wh = window.innerHeight * 0.8;
 
-    btn.addEventListener("click", () => {
-        modal.showModal();
+  document.addEventListener("scroll", () => {
+    ele.forEach((e) => {
+      if (e.getBoundingClientRect().top < wh) {
+        e.classList.add("show");
+      }
     });
+  });
+</script>
 
-    btncerrar.addEventListener("click", () =>{
-        modal.close()
-    })
+<script is:inline>
+  const modal = document.querySelector("#model");
+  const btn = document.querySelector("#btn");
+  const btncerrar = document.querySelector("#cerrar");
+
+  btn.addEventListener("click", () => {
+    modal.showModal();
+  });
+
+  btncerrar.addEventListener("click", () => {
+    modal.close();
+  });
 </script>
