@@ -2,7 +2,7 @@
 const TIMESTAMP = 1727271000000;
 ---
 
-<section class="main">
+<section class="main fade-in">
   <div class="countdown" data-date={TIMESTAMP}>
     <div class="digits">
       <span class="num" data-days>00</span>
@@ -21,7 +21,7 @@ const TIMESTAMP = 1727271000000;
       <span>Segundos</span>
     </div>
   </div>
-  <article class="text">
+  <article class="text fade-in">
     <img class="icon" src="/corazones.png" alt="icono de corazon" />
     <p>
       Nos conocimos de la manera más inesperada.
@@ -129,6 +129,19 @@ const TIMESTAMP = 1727271000000;
     }
   }
 </style>
+
+<script>
+  const ele = document.querySelectorAll(".fade-in");
+  const wh = window.innerHeight * 0.8;
+
+  document.addEventListener("scroll", () => {
+    ele.forEach(e => {
+      if(e.getBoundingClientRect().top < wh){
+        e.classList.add("show")
+      } 
+    })
+  })
+</script>
 
 <script>
   const SECOND = 1000;

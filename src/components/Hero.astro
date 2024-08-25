@@ -3,7 +3,7 @@ import ChevronDown from "../icons/Chevron-down.astro";
 ---
 
 <section class="hero">
-    <img src="/titulo-portada.png" alt="">
+    <img class="hero_img" src="/titulo-portada.png" alt="Hero img">
     <ChevronDown/>
 </section>
 <style>
@@ -19,6 +19,10 @@ import ChevronDown from "../icons/Chevron-down.astro";
         display: flex;
         justify-content: center;
         align-items: start;
+    }
+
+    .hero_img {
+        animation: 5s fade_in ;
     }
 
     img{
