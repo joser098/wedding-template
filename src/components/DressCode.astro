@@ -1,22 +1,74 @@
 <section class="main">
     <div class="dresscode">
-        <img src="dresscode.svg" />
+        <img src="/dress-code.png" />
         <h1>DRESS CODE:</h1>
         <p>Formal Elegante</p>
+        <div class="paleta">
+            <p style="color: #e6dbc8;">Colores:</p>
+            <div class="gama">
+                <div class="gama-colors">
+                    <div class="color" style="background-color: #C1C4A9;"></div>
+                    <div class="color" style="background-color: #A0A77E"></div>
+                    <div class="color" style="background-color: #546B51;"></div>
+                    <div class="color" style="background-color: #000000"></div>
+                </div>
+                <div class="gama-colors">
+                    <div class="color" style="background-color: #F4D9C4;"></div>
+                    <div class="color" style="background-color: #CC9D8B;"></div>
+                    <div class="color" style="background-color: #6B534F;"></div>
+                    <div class="color" style="background-color: #9B5D48;"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <style>
+    .paleta {
+        background: #ffffff;
+        max-width: 300px;
+        padding: 10px;
+        border-radius: 05px;
+        margin-top: 10px;
+    }
+    .gama {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gama-colors {
+        /* width: 100%; */
+        height: auto;
+        display: flex;
+        gap: 10px;
+    }
+    .color {
+        width: 40px;
+        height: 40px;
+        background: #000;
+        border-radius: 20px 20px 0 0;
+    }
     img {
-        width: 80px;
-        padding: 60px 0px 10px 0px;
         text-align: center;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        border-radius: 100%;
+        max-height: 80px;
+        padding: 20px;
     }
     .main {
-        background-color: #dcc8b4;
+        background-color: #e6dbc8;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     h1 {
         color: #ffffff;
@@ -33,12 +85,10 @@
     }
     p {
         color: #ffffff;
-        padding: 10px 0px 50px 0px;
+        padding: 0px 0px 0px 0px;
         font-size: 25px;
         font-weight: 300;
-        width: 300px;
-        height: 50px;
-        font-family: 'Noto Serif Georgian', serif;
+        font-family: "Noto Serif Georgian", serif;
         text-align: center;
         margin: 0 auto;
         display: flex;
