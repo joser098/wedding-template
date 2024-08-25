@@ -2,20 +2,54 @@
 interface Props {
 	title: string;
 	body: string;
-	href: string;
+	src: string;
+	textBtn: string;
 }
 
-const { href, title, body } = Astro.props;
+const { src, title, body, textBtn } = Astro.props;
 ---
 
-<li>
-	<a href={href}>
-		<h2>
-			{title}
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<article class="card-events">
+	<img src={src} alt="" />
+	<h2>{title}</h2>
+	<p>{body}</p>
+	<button>{textBtn}</button>
+</article>
 
+<style>
+	.card-events {
+		width: 100%;
+		max-width: 400px;
+		background: #fff;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+	}
+	p {
+		text-align: center;
+	}
+	button {
+	color: #ffffff;
+    border: 2px solid #e6dbc8;
+    border-radius: 30px;
+    transition: 1s;
+    background-color: #e6dbc8;
+    padding: 10px 40px;
+    font-size: small;
+    font-weight: 450;
+    margin: 3px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    max-width: 200px;  
+}
+
+  button:hover {
+    background-color: transparent;
+    color: #dcc8b4;
+  }
+	}
+</style>
