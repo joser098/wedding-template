@@ -2,12 +2,32 @@
 import Card from "./Card.astro";
 ---
 
-<h1>Esta es mi seccion de eventos</h1>
-<Card href="#" title="Titulo de la card" body="Lorem ipsum aasdf"/>
-<Card href="#" title="Titulo de la card" body="Lorem ipsum aasdf"/>
+<section class="events">
+    <Card
+        src="#"
+        title="Titulo de la card"
+        body="Lorem ipsum aasdf"
+        textBtn="COMO LLEGAR"
+    />
+    <Card
+        src="#"
+        title="Titulo de la card"
+        body="Lorem ipsum aasdf"
+        textBtn="COMO LLEGAR"
+    />
+</section>
 
 <style>
     h1 {
         color: red;
+    }
+    .events {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background: #e6dbc8;
+		padding: 20px;
+        
     }
 </style>
