@@ -2,9 +2,10 @@
   #cards-container {
     background-color: #fff;
     background-position: center center;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     padding: 25px 2px 50px;
-    height: 200px;
+    height: auto;
     text-align: center;
     line-height: 30px;
     margin: 0 auto;
@@ -20,12 +21,14 @@
     transition: 1s;
     background-color: #dcc8b4;
     padding: 5px 40px;
-    font-size: 16px;
+    font-size: small;
     font-weight: 450;
     margin: 3px;
     text-decoration: none;
     display: inline-block;
-  }
+    width: 100%;
+    max-width: 150px;  
+}
 
   .formula:hover {
     background-color: transparent;
@@ -33,18 +36,17 @@
   }
 
   p {
-    font-size: 19px;
+    font-size: small;
+    display: block;
     color: #666666;
-    margin-bottom: 20px;
     font-family: "Noto Serif Georgian", serif;
     font-weight: 300;
   }
 
   h1 {
-    font-size: 50px;
-    margin-top: 30px;
+    font-size: 40px;
+    margin: 0;
     font-weight: 500;
-    margin-bottom: 30px;
     color: #dcc8b4;
     font-family: "Montserrat";
   }
@@ -54,25 +56,50 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px;
+    padding: 40px;
+  }
+
+    /* SIZE FOR 640px */
+    @media (min-width: 640px) {
+      p {
+        font-size: large;
+      }
+      h1 {
+        font-size: 50px;
+      }
+  }
+
+  /* SIZE FOR 1024px */
+  @media (min-width: 1024px) {
   }
 </style>
 
-<main>
+<main class="fade-in">
   <div id="cards-container">
     <div class="confirmacion">
       <h1>RSPV</h1>
-      <p>
-        Espero que seas parte de esta gran celebracion. ¡Confirmanos tu
-        asistencia!
-      </p>
+      <p>Espero que seas parte de esta gran celebracion.</p>
+      <p>¡Confirmanos tu asistencia!</p>
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdW2MNrglehWBmiLAHzLwOnCrolTRkofHxRKpsMmfAbPpho_g/viewform?usp=sf_link"
         target="_blank"
-        class="formula">CONFIRMAR ASISTENCIA</a>
+        class="formula">CONFIRMAR</a>
       <div class="agendar">
         <a href="" target="_blank" class="formula">AGENDAR EVENTO</a>
       </div>
     </div>
   </div>
 </main>
+
+<script>
+  const ele = document.querySelectorAll(".fade-in");
+  const wh = window.innerHeight * 0.8;
+
+  document.addEventListener("scroll", () => {
+    ele.forEach(e => {
+      if(e.getBoundingClientRect().top < wh){
+        e.classList.add("show")
+      } 
+    })
+  })
+</script>
