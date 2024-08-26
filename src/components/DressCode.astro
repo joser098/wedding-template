@@ -3,25 +3,57 @@
         <img src="/dress-code.png" />
         <h1>DRESS CODE:</h1>
         <p>Formal Elegante</p>
-        <div class="paleta">
-            <p style="color: #e6dbc8;">Colores:</p>
-            <div class="gama">
-                <div class="gama-colors">
-                    <div class="color" style="background-color: #C1C4A9;"></div>
-                    <div class="color" style="background-color: #A0A77E"></div>
-                    <div class="color" style="background-color: #546B51;"></div>
-                    <div class="color" style="background-color: #000000"></div>
-                </div>
-                <div class="gama-colors">
-                    <div class="color" style="background-color: #F4D9C4;"></div>
-                    <div class="color" style="background-color: #CC9D8B;"></div>
-                    <div class="color" style="background-color: #6B534F;"></div>
-                    <div class="color" style="background-color: #9B5D48;"></div>
-                </div>
+        <button id="btn"> PALETA DE COLORES </button>   
+    </div>
+</section>
+
+<dialog id="model" class="modal">
+    <div class="paleta">
+        <p style="color: #e6dbc8;">Colores:</p>
+        <div class="gama">
+            <div class="gama-colors">
+                <div class="color" style="background-color: #C1C4A9;"></div>
+                <div class="color" style="background-color: #A0A77E"></div>
+                <div class="color" style="background-color: #546B51;"></div>
+                <div class="color" style="background-color: #000000"></div>
+            </div>
+            <div class="gama-colors">
+                <div class="color" style="background-color: #F4D9C4;"></div>
+                <div class="color" style="background-color: #CC9D8B;"></div>
+                <div class="color" style="background-color: #6B534F;"></div>
+                <div class="color" style="background-color: #9B5D48;"></div>
             </div>
         </div>
     </div>
-</section>
+    <button id="cerrar" class="btn">cerrar</button>
+  </dialog>
+  <script>
+    const ele = document.querySelectorAll(".fade-in");
+    const wh = window.innerHeight * 0.8;
+  
+    document.addEventListener("scroll", () => {
+      ele.forEach((e) => {
+        if (e.getBoundingClientRect().top < wh) {
+          e.classList.add("show");
+        }
+      });
+    });
+  </script>
+  
+  <script is:inline>
+    const modal = document.querySelector("#model");
+    const btn = document.querySelector("#btn");
+    const btncerrar = document.querySelector("#cerrar");
+  
+    btn.addEventListener("click", () => {
+      modal.showModal();
+    });
+  
+    btncerrar.addEventListener("click", () => {
+      modal.close();
+    });
+  </script>
+ 
 <style>
     .paleta {
         background: #ffffff;
@@ -95,4 +127,29 @@
         flex-direction: column;
         justify-content: center;
     }
+    #btn {
+    color:#e6dbc8;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    transition: 1s;
+    background-color: #ffffff;
+    padding: 12px 45px;
+    font-size: 13px;
+    font-weight: 450;
+    margin: 3px;
+    text-decoration: none;
+    display: inline-block;
+    }
+    #btn:hover {
+      background-color: transparent;
+      color: #ffffffcb;
+    }
+  .modal {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    max-width: 300px;
+  }
 </style>
