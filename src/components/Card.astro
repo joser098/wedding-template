@@ -4,16 +4,19 @@ interface Props {
 	body: string;
 	src: string;
 	textBtn: string;
+	link: string;
 }
 
-const { src, title, body, textBtn } = Astro.props;
+const { src, title, body, textBtn , link} = Astro.props;
 ---
 
 <article class="card-events">
 	<img src={src} alt="" />
 	<h2>{title}</h2>
 	<p>{body}</p>
-	<button>{textBtn}</button>
+	<a href={link} target="_blank" class="button" rel="noopener noreferrer" style="text-decoration: none;">
+       {textBtn}
+    </a>
 </article>
 
 <style>
@@ -21,17 +24,25 @@ const { src, title, body, textBtn } = Astro.props;
 		width: 100%;
 		max-width: 400px;
 		background: #fff;
-		padding: 20px;
+		padding: 0px 0px 20px 0px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
+		height: 500px;
+		margin: 0 ;
+		gap: 10px;
 
+		
 	}
 	p {
 		text-align: center;
+		margin-top: 0;
+		padding: 0 30px;
+		font-family: "Noto Serif Georgian", serif;
+	
 	}
-	button {
+	.button {
 	color: #ffffff;
     border: 2px solid #e6dbc8;
     border-radius: 30px;
@@ -42,14 +53,28 @@ const { src, title, body, textBtn } = Astro.props;
     font-weight: 450;
     margin: 3px;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+	justify-content: center;
     width: 100%;
     max-width: 200px;  
 }
 
-  button:hover {
+  .button:hover {
     background-color: transparent;
-    color: #dcc8b4;
+    color: #e6dbc8 ;
   }
-	}
+  img {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	
+  }
+  h2 {
+	color: #e6dbc8 ;
+	margin: 5px 0px 5px;
+	font-family: "Noto Serif Georgian", serif;
+  }
+  body{
+ color: #666666;
+  }
 </style>
