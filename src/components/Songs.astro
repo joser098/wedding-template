@@ -1,33 +1,69 @@
-<div>
+<div class="cancion">
     <h2>¿QUÉ CANCIONES NO PUEDEN FALTAR?</h2>
     <p>
         ¡Ayudanos sugiriendo las canciones que pensás que no pueden faltar en la
         fiesta!
     </p>
     <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdW2MNrglehWBmiLAHzLwOnCrolTRkofHxRKpsMmfAbPpho_g/viewform?usp=sf_link"
+        href="https://forms.gle/JxJ5pbaroan5kT5d7"
         target="_blank"
         class="sugerir">SUGERIR</a
     >
 </div>
 <style>
-     .sugerir {
-        color: #ffffff;
-        border: 2px solid #e6dbc8;
+    .sugerir {
+        color: #e6dbc8;
+        border: 2px solid #fff;
         border-radius: 30px;
         transition: 1s;
-        background-color: #e6dbc8;
-        padding: 5px 40px;
+        background-color: #fff;
+        padding: 12px 40px;
         font-size: small;
-        font-weight: 450;
+        font-weight: 600;
         margin: 3px;
         text-decoration: none;
         display: inline-block;
         width: 100%;
         max-width: 150px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+
+        
     }
     .sugerir:hover {
         background-color: transparent;
-        color: #dcc8b4;
+        color: #ffffffcb;
     }
+    .cancion {
+        background: #e6dbc8;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        gap: 20px;
+        padding: 50px 0;
+    }
+    h2 {
+        color: #ffffff;
+       font-size: 25px;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        font-family: "Montserrat", sans-serif;
+    }
+    p {
+        font-family: "Noto Serif Georgian", serif;
+        margin: 0;
+        font-weight: 300;
+        font-size: 17px;
+        text-align: center;
+    }
+     /* SIZE FOR 640px */
+  @media (max-width: 640px) {
+    .cancion {
+        font-size: 17px;  
+    }
+  }
 </style>

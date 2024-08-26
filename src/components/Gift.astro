@@ -18,7 +18,7 @@
     justify-content: center;
   }
   p {
-    font-size: small;
+    font-size: large;
     color: #666;
     margin: 5px;
     margin-bottom: 20px;
@@ -35,19 +35,22 @@
     max-height: 80px;
     padding: 20px;
   }
-  #btn,
+  #_btn,
   .btn {
     color: #ffffff;
     border: 2px solid #e6dbc8;
     border-radius: 30px;
     transition: 1s;
     background-color: #e6dbc8;
-    padding: 5px 40px;
+    padding: 12px 40px;
     font-size: small;
     font-weight: 450;
     margin: 3px;
     text-decoration: none;
     display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
 
     &&:hover {
       background-color: transparent;
@@ -71,7 +74,7 @@
   /* SIZE FOR 640px */
   @media (min-width: 640px) {
     p {
-      font-size: large;
+      font-size: 20px;
     }
     .modal {
       max-width: 500px;
@@ -88,17 +91,17 @@
         no olviden añadir una tarjeta con sus mejores deseos para nuestro
         matrimonio.
       </p>
-      <button id="btn"> VER DATOS </button>
+      <button id="_btn"> VER DATOS </button>
     </div>
   </div>
 </main>
 
-<dialog id="model" class="modal">
+<dialog id="_model" class="modal">
   <p>
     Tendremos un buzón en la recepción donde podran depositar su sobre con el
     regalo en efectivo
   </p>
-  <button id="cerrar" class="btn">cerrar</button>
+  <button id="_cerrar" class="btn">cerrar</button>
 </dialog>
 
 <script>
@@ -115,15 +118,15 @@
 </script>
 
 <script is:inline>
-  const modal = document.querySelector("#model");
-  const btn = document.querySelector("#btn");
-  const btncerrar = document.querySelector("#cerrar");
+  const model = document.querySelector("#_model");
+  const _btn = document.querySelector("#_btn");
+  const _btncerrar = document.querySelector("#_cerrar");
 
-  btn.addEventListener("click", () => {
-    modal.showModal();
+  _btn.addEventListener("click", () => {
+    model.showModal();
   });
 
-  btncerrar.addEventListener("click", () => {
-    modal.close();
+  _btncerrar.addEventListener("click", () => {
+    model.close();
   });
 </script>
