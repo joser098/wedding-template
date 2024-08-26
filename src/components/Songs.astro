@@ -41,11 +41,11 @@
         flex-direction: column;
         display: flex;
         gap: 20px;
-        padding: 50px 0;
+        padding: 50px 10px;
     }
     h2 {
         color: #ffffff;
-       font-size: 25px;
+        font-size: larger;
         font-weight: 400;
         text-align: center;
         margin: 0 auto;
@@ -57,13 +57,17 @@
         font-family: "Noto Serif Georgian", serif;
         margin: 0;
         font-weight: 300;
-        font-size: 17px;
+        font-size: small;
         text-align: center;
+        text-wrap: balance;
     }
      /* SIZE FOR 640px */
-  @media (max-width: 640px) {
-    .cancion {
-        font-size: 17px;  
+  @media (min-width: 640px) {
+    p {
+        font-size: large;  
+    }
+    h2 {
+        font-size: xx-large;
     }
   }
 </style>
