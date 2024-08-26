@@ -13,7 +13,9 @@ const { src, title, body, textBtn , link} = Astro.props;
 <article class="card-events">
 	<img src={src} alt="" />
 	<h2>{title}</h2>
-	<p>{body}</p>
+	<div class="text-container">
+		<p>{body}</p>
+	</div>
 	<a href={link} target="_blank" class="button" rel="noopener noreferrer" style="text-decoration: none;">
        {textBtn}
     </a>
@@ -32,8 +34,13 @@ const { src, title, body, textBtn , link} = Astro.props;
 		height: auto;
 		margin: 0 ;
 		gap: 10px;
-
-		
+	}
+	.text-container {
+		min-height: 120px;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
 	}
 	p {
 		text-align: center;
