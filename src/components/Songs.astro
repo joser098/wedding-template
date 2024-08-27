@@ -1,14 +1,16 @@
 <div class="cancion">
-    <h2>¿QUÉ CANCIONES NO PUEDEN FALTAR?</h2>
-    <p>
-        ¡Ayudanos sugiriendo las canciones que pensás que no pueden faltar en la
-        fiesta!
-    </p>
-    <a
-        href="https://forms.gle/JxJ5pbaroan5kT5d7"
-        target="_blank"
-        class="sugerir">SUGERIR</a
-    >
+    <div class="song-container fade-in">
+        <h2>¿QUÉ CANCIONES NO PUEDEN FALTAR?</h2>
+        <p>
+            ¡Ayudanos sugiriendo las canciones que pensás que no pueden faltar en la
+            fiesta!
+        </p>
+        <a
+            href="https://forms.gle/JxJ5pbaroan5kT5d7"
+            target="_blank"
+            class="sugerir">SUGERIR</a
+        >
+    </div>
 </div>
 <style>
     .sugerir {
@@ -30,17 +32,19 @@
 
         
     }
+    .song-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
     .sugerir:hover {
         background-color: transparent;
         color: #ffffffcb;
     }
     .cancion {
         background: #e6dbc8;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        display: flex;
-        gap: 20px;
         padding: 50px 10px;
     }
     h2 {
@@ -71,3 +75,15 @@
     }
   }
 </style>
+<script>
+    const ele = document.querySelectorAll(".fade-in");
+    const wh = window.innerHeight * 0.8;
+  
+    document.addEventListener("scroll", () => {
+      ele.forEach(e => {
+        if(e.getBoundingClientRect().top < wh){
+          e.classList.add("show")
+        } 
+      })
+    })
+</script>

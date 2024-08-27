@@ -1,5 +1,5 @@
 <section class="main">
-  <div class="dresscode">
+  <div class="dresscode fade-in">
     <img src="/dress-code.png" />
     <h1>DRESS CODE:</h1>
     <p>Formal Elegante</p>
@@ -54,6 +54,19 @@
   btncerrar.addEventListener("click", () => {
     modal.close();
   });
+</script>
+
+<script>
+  const ele = document.querySelectorAll(".fade-in");
+  const wh = window.innerHeight * 0.8;
+
+  document.addEventListener("scroll", () => {
+    ele.forEach(e => {
+      if(e.getBoundingClientRect().top < wh){
+        e.classList.add("show")
+      } 
+    })
+  })
 </script>
 
 <style>

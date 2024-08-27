@@ -45,4 +45,25 @@ import Songs from "../components/Songs.astro";
     opacity: 1;
     transform: translateY(0);
   }
+
+  .slideRight {
+    opacity: 0;
+    transform: translatex(-40px);
+    transition:
+      opacity 1s ease-out,
+      transform 1s ease-out;
+  }
+
+  .slideLeft {
+    opacity: 0;
+    transform: translatex(40px);
+    transition:
+      opacity 1s ease-out,
+      transform 1s ease-out;
+  }
+
+  .slideRight.show, .slideLeft.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
 </style>

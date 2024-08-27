@@ -1,5 +1,5 @@
 <section class="farewell">
-    <div>
+    <div class="fade-in">
         <img class="farewell_img" src="/titulo-portada.png" alt="farewell img"/>
         <p>
             Gracias por acompañarnos y compartir nuestra felicidad..
@@ -43,3 +43,15 @@
         text-align: center;
     }
 </style>
+<script>
+    const ele = document.querySelectorAll(".fade-in");
+    const wh = window.innerHeight * 0.8;
+  
+    document.addEventListener("scroll", () => {
+      ele.forEach(e => {
+        if(e.getBoundingClientRect().top < wh){
+          e.classList.add("show")
+        } 
+      })
+    })
+  </script>
