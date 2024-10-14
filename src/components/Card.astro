@@ -5,12 +5,13 @@ interface Props {
 	src: string;
 	textBtn: string;
 	link: string;
+	direction: string
 }
 
-const { src, title, body, textBtn , link} = Astro.props;
+const { src, title, body, textBtn , link, direction} = Astro.props;
 ---
 
-<article class="card-events">
+<article class={`card-events ${direction}`}>
 	<img src={src} alt="" />
 	<h2>{title}</h2>
 	<div class="text-container">
@@ -50,7 +51,6 @@ const { src, title, body, textBtn , link} = Astro.props;
 		font-weight: 300;
 		font-size: 17px;
 		line-height: 25px;
-	
 	}
 	.button {
 	color: #ffffff;
@@ -90,3 +90,21 @@ const { src, title, body, textBtn , link} = Astro.props;
  color: #666666;
   }
 </style>
+<script>
+    const eleR = document.querySelectorAll(".slideRight");
+    const eleL = document.querySelectorAll(".slideLeft");
+    const wh = window.innerHeight * 0.8;
+  
+    document.addEventListener("scroll", () => {
+		eleR.forEach((e) => {
+			if(e.getBoundingClientRect().top < wh){
+				e.classList.add("show")
+			}
+		})
+		eleL.forEach((e) => {
+			if(e.getBoundingClientRect().top < wh){
+				e.classList.add("show")
+			}
+		})
+    })
+</script>
